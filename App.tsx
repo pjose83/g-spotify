@@ -1,15 +1,14 @@
+import React from "react"
 import { StyleSheet, Text, View } from 'react-native'
 import { NavigationContainer } from "@react-navigation/native"
-import Icon from 'react-native-vector-icons/Feather'
+import { BottomTabNavigator } from './src/routes'
 // import { API_URL } from "@env"
 
 export const App = () => {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        <Text style={{ color: "#fff", fontSize: 24 }}>App</Text>
-        <Icon name="camera" size={30} color="#fff" />
-      </View>
+      <BottomTabNavigator />
+      {/* <Text>Hola mundo</Text> */}
     </NavigationContainer>
   )
 }
