@@ -1,23 +1,20 @@
-import React from "react"
-import { StyleSheet, Text, View } from 'react-native'
+import 'react-native-gesture-handler';
+import { StatusBar } from 'react-native'
 import { NavigationContainer } from "@react-navigation/native"
-import { BottomTabNavigator } from './src/routes'
+import { StackNavigator } from './src/routes'
+import { COLORS } from "./src/contants/styles";
 // import { API_URL } from "@env"
 
 export const App = () => {
   return (
     <NavigationContainer>
-      <BottomTabNavigator />
-      {/* <Text>Hola mundo</Text> */}
+      <StatusBar
+        hidden={false}
+        backgroundColor={COLORS.dark}
+        barStyle={"light-content"}
+        translucent={true}
+      />
+      <StackNavigator />
     </NavigationContainer>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#333",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-})

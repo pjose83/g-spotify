@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { ITabParams, ITabRoutes } from "../lib/models/routes"
 import { Home, Search, MyList, Discover } from "../screens"
 import Icon from 'react-native-vector-icons/Feather'
-import { colors } from "../contants/styles"
+import { COLORS } from "../contants/styles"
 import { Dimensions, StyleSheet } from "react-native"
 
 const Tab = createBottomTabNavigator<ITabParams>()
@@ -11,7 +11,7 @@ const { height } = Dimensions.get("screen")
 
 const { Navigator, Screen } = Tab
 
-export const routes: ITabRoutes[] = [
+const routes: ITabRoutes[] = [
   {
     name: "Home",
     Component: Home,
@@ -23,7 +23,7 @@ export const routes: ITabRoutes[] = [
     icon: "search"
   },
   {
-    name: "MyList",
+    name: "My list",
     Component: MyList,
     icon: "music"
   },
@@ -40,8 +40,8 @@ export const BottomTabNavigator = () => {
       initialRouteName="Home"
       screenOptions={{
         tabBarStyle: styles.tabBar,
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.secondary,
+        tabBarActiveTintColor: COLORS.primary,
+        tabBarInactiveTintColor: COLORS.secondary,
       }}
     >
       {routes.map(({ name, Component, icon }) => (
@@ -64,7 +64,7 @@ export const BottomTabNavigator = () => {
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: colors.dark,
+    backgroundColor: COLORS.dark,
     height: height * .09
   }
 })

@@ -8,6 +8,7 @@
     //   "constans/*": ["constans/*"],
     //   "@store/*": ["store/*"],
     // },
+    "typeRoots": ["./src/types"]
   },
   // "exclude": [
   //   "src"
